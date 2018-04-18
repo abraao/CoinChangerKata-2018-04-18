@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CoinChangerKata
 {
-    public class Class1
+    public class CoinChanger
     {
+
+        public int[] Change(int i, int[] ints)
+        {
+            return new int[] {1};
+        }
     }
 }

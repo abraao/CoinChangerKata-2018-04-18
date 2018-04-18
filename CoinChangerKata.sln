@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinChangerKata", "CoinChangerKata\CoinChangerKata.csproj", "{D0E54D44-E41B-4479-80BB-C93102DF47D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinChangerKataTests", "CoinChangerKataTests\CoinChangerKataTests.csproj", "{5D8D6983-42CF-49BB-B12E-4FFFA4749CA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D0E54D44-E41B-4479-80BB-C93102DF47D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E54D44-E41B-4479-80BB-C93102DF47D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E54D44-E41B-4479-80BB-C93102DF47D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8D6983-42CF-49BB-B12E-4FFFA4749CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8D6983-42CF-49BB-B12E-4FFFA4749CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8D6983-42CF-49BB-B12E-4FFFA4749CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8D6983-42CF-49BB-B12E-4FFFA4749CA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
