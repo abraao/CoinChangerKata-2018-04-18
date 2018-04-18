@@ -13,14 +13,15 @@ namespace CoinChangerKata
 
             int totalChange = 0;
             int remainingChange = change;
+       
 
             for(int i = availableCoins.Length - 1; i > 0; i--)
             {
                 if (availableCoins[i] <= remainingChange)
                 {
-                    changeCoins[i] = 1;
-                    remainingChange -= availableCoins[i];
-                    totalChange += availableCoins[i];
+                    changeCoins[i] = remainingChange / availableCoins[i];
+                    remainingChange -= availableCoins[i] * changeCoins[i];
+                    totalChange += availableCoins[i] * changeCoins[i];
                 }
                 else
                 {
