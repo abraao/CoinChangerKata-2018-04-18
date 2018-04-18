@@ -9,26 +9,30 @@ namespace CoinChangerKata
 
         public int[] Change(int change, int[] availableCoins)
         {
+            int[] sortedCoins = (int[]) availableCoins.Clone(); 
+            Array.Sort(sortedCoins);
             int[] changeCoins = new int[availableCoins.Length];
 
             int totalChange = 0;
             int remainingChange = change;
 
-            for(int i = availableCoins.Length - 1; i > 0; i--)
+            for(int i = sortedCoins.Length - 1; i > 0; i--)
             {
-                if (availableCoins[i] <= remainingChange)
+                int position = Array.IndexOf(availableCoins, sortedCoins[i]);
+                if (sortedCoins[i] <= remainingChange)
                 {
-                    changeCoins[i] = remainingChange / availableCoins[i];
-                    remainingChange -= availableCoins[i] * changeCoins[i];
-                    totalChange += availableCoins[i] * changeCoins[i];
+                    changeCoins[position] = remainingChange / sortedCoins[i];
+                    remainingChange -= sortedCoins[i] * changeCoins[position];
+                    totalChange += sortedCoins[i] * changeCoins[position];
                 }
                 else
                 {
-                    changeCoins[i] = 0;
+                    changeCoins[position] = 0;
                 }
             }
 
-            changeCoins[0] = (change - totalChange) / availableCoins[0];
+            int smallestCoinPosition = Array.IndexOf(availableCoins, sortedCoins[0]);
+            changeCoins[smallestCoinPosition] = (change - totalChange) / sortedCoins[0];
 
             return changeCoins;
         }
