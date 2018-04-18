@@ -7,20 +7,28 @@ namespace CoinChangerKata
     public class CoinChanger
     {
 
-        public int[] Change(int change, int[] coins)
+        public int[] Change(int change, int[] availableCoins)
         {
-            int[] changeCoins = new int[coins.Length];
-            for(int i = 0; i < coins.Length ; i++)
+            int[] changeCoins = new int[availableCoins.Length];
+
+            int totalChange = 0;
+            int remainingChange = change;
+
+            for(int i = availableCoins.Length - 1; i > 0; i--)
             {
-                if (coins[i] == change)
+                if (availableCoins[i] <= remainingChange)
                 {
                     changeCoins[i] = 1;
+                    remainingChange -= availableCoins[i];
+                    totalChange += availableCoins[i];
                 }
                 else
                 {
                     changeCoins[i] = 0;
                 }
             }
+
+            changeCoins[0] = change - totalChange;
 
             return changeCoins;
         }
