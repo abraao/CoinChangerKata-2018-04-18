@@ -23,5 +23,13 @@ namespace CoinChangerKataTests
 
             Assert.AreEqual(new int[] {2}, change);
         }
+
+        [Test]
+        public void Return_5_cent_coin_when_change_is_5_cents_and_coin_is_1_5_cents()
+        {
+            int[] change = _coinChanger.Change(5, new int[] { 1, 5 });
+
+            Assert.AreEqual(new int[] { 0, 1 }, change);
+        }
     }
 }
