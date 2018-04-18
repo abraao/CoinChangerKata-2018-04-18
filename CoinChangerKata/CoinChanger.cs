@@ -13,7 +13,6 @@ namespace CoinChangerKata
 
             int totalChange = 0;
             int remainingChange = change;
-       
 
             for(int i = availableCoins.Length - 1; i > 0; i--)
             {
@@ -29,7 +28,7 @@ namespace CoinChangerKata
                 }
             }
 
-            changeCoins[0] = change - totalChange;
+            changeCoins[0] = (change - totalChange) / availableCoins[0];
 
             return changeCoins;
         }
